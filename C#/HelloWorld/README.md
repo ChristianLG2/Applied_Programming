@@ -1,0 +1,2 @@
+
+This project is a simple "Hello World" application written in C#. It serves as a basic demonstration of how to set up a C# project and execute a simple piece of code that prints "Hello World" to the console.
