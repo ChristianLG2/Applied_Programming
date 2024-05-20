@@ -19,9 +19,9 @@ library(tidyverse)
 library(DT) 
 library(ggplot2)
 library(dplyr)
+library(leaflet)
 
-
-Rent <- read_csv("C:/Users/chris/OneDrive/Documents/BYUI/Spring 2024/Applied Programming CSE-310/Sprint 1/R Statistic Analysis and Visualization/Rent.csv")
+Rent <- read_csv("C:/Users/cliragonzalez/Downloads/Chris/Applied_Programming/R Statistic Analysis and Visualization/Rent.csv")
 
 View(Rent)
 
@@ -76,7 +76,7 @@ And a Summary table of our Data:
 
 <br />
 <br />
-```{r}
+```{r,echo=FALSE,message=FALSE, warning=FALSE}
 pander(summary(Rent))
 ```
 <br />
@@ -85,12 +85,53 @@ pander(summary(Rent))
 ## Analysis
 
 <!-- Present an interesting graphic using the Rent data set. Do not create the same graphics that are shown in the [Good Example Analysis](./Analyses/StudentHousing.html), but you can certainly use those graphics as a guide to inspire you on what to do yourself. -->
+
+```{r,echo=FALSE,message=FALSE, warning=FALSE}
+pal_gender <- colorFactor(c("pink", "blue"), domain = Rent$Gender)
+
+# Define color palette for Price
+pal_price <- colorNumeric("YlOrRd", domain = Rent$Price)
+
+# Determine a reasonable range for circle marker sizes
+max_price <- max(Rent$Price, na.rm = TRUE)
+min_price <- min(Rent$Price, na.rm = TRUE)
+
+# Create a leaflet map
+leaflet(data = Rent) %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addCircleMarkers(
+    ~Longitude, ~Latitude,  # Coordinates
+    radius = ~5 + (Price - min_price) / (max_price - min_price) * 15,  # Adjust radius scaling
+    color = ~pal_gender(Gender),  # Border color by Gender
+    fillColor = ~pal_price(Price),  # Fill color by Price
+    stroke = FALSE,  # No border
+    fillOpacity = 0.7,  # Transparency
+    popup = ~paste("Price: $", Price, "<br>Gender: ", Gender)  # Popup info
+  ) %>%
+  addLegend(
+    "bottomright",
+    pal = pal_gender,
+    values = ~Gender,
+    title = "Apartment Gender",
+    opacity = 1
+  ) %>%
+  addLegend(
+    "topright",
+    pal = pal_price,
+    values = Rent$Price,
+    title = "Price Range",
+    labFormat = labelFormat(prefix = "$"),
+    opacity = 1
+  )
+  
+```
+
 After reviewing the general characteristics and pricing across our dataset, we noticed that rental prices might vary based on different factors, including the gender accommodation of the apartments. To explore this further, we decided to analyze how the median rental prices differ between apartments designated for males, females, and those that are co-ed or do not specify a gender preference. Understanding these differences can help us identify unique pricing strategies and demand within each segment.
 
 <br />
 <br />
 
-```{r warning=FALSE}
+```{r,echo=FALSE,message=FALSE, warning=FALSE}
 # Use this R-chunk to...
 # ...Create an interesting graphic using the Rent data set.
 
@@ -118,6 +159,38 @@ ggplot(Rent, aes(x = Gender, y = Price, fill = Gender)) +
 ```
 
 
+The relationship between WalkingMinutes and Price is not statistically significant, as indicated by the p-value of 0.375 for the WalkingMinutes coefficient. This means that we do not have enough evidence to conclude that there is a meaningful relationship between the distance from school and the price of the apartments in this dataset.
+The low R-squared value suggests that WalkingMinutes explains very little of the variation in Price.
+
+```{r,echo=FALSE,message=FALSE, warning=FALSE}
+sum(is.na(Rent$WalkingMinutes))
+sum(is.na(Rent$Price))
+
+# Remove rows with missing values from the entire dataset
+Rent <- na.omit(Rent)
+
+# Fit the linear model
+model <- lm(Price ~ WalkingMinutes, data = Rent)
+
+# Summarize the model
+summary(model)
+
+
+# Assuming 'Rent' data frame is already loaded and cleaned
+# Create the scatter plot with a regression line
+ggplot(data = Rent, aes(x = WalkingMinutes, y = Price, color = Gender)) +
+  geom_point() +  # Scatter plot with points colored by Gender
+  geom_smooth(method = "lm", se = FALSE, color = "black") +  # Regression line
+  labs(title = "Relationship between Walking Minutes and Apartment Price",
+       x = "Walking Minutes to School",
+       y = "Price of Apartment",
+       color = "Apartment Gender") +  # Label for the legend
+  theme_minimal()
+
+
+```
+
+
 <!-- Write a few statements here that explain your graphic and what it shows. -->
 
 In the 'Price Distribution by Gender' boxplot, we examine the distribution of rental prices for student housing in the Rexburg area, categorized by gender. This visualization highlights key trends and differences in the pricing of male and female student accommodations. While the overall cost range appears similar for both genders, a noteworthy observation is that the average (mean) rent for female housing tends to be higher than that for male housing. This suggests a gender-based variation in the pricing structure of student apartments in this region. 
@@ -125,7 +198,7 @@ In the 'Price Distribution by Gender' boxplot, we examine the distribution of re
 
 
 
-```{r warning=FALSE}
+```{r,echo=FALSE,message=FALSE, warning=FALSE}
 # Use this R-chunk to...
 # ...compute and display a meaningful table of numerical summaries supporting your above graphic.
 summary_table <- Rent %>%
