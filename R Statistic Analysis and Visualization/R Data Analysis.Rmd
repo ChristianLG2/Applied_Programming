@@ -8,7 +8,6 @@ output:
     toc_float: true
 ---
 
-
 **Sprint 1: Data Wrangling & Analysis With R and markdown**
 
 ```{r, message=FALSE, warning=FALSE}
@@ -21,7 +20,7 @@ library(ggplot2)
 library(dplyr)
 library(leaflet)
 
-Rent <- read_csv("C:/Users/cliragonzalez/Downloads/Chris/Applied_Programming/R Statistic Analysis and Visualization/Rent.csv")
+Rent <- read_csv("C:\\Users\\chris\\OneDrive\\Documents\\Github Posted\\Applied_Programming\\R Statistic Analysis and Visualization\\Rent.csv")
 
 View(Rent)
 
@@ -61,7 +60,7 @@ Here is a Table containing the characteristics of our Data:
 <br />
 <br />
 
-```{r, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 # Code to get you started. 
 # View(...) works great in the Console, but datatable(...) must be
 # used instead within an R-chunk.
