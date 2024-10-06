@@ -1,4 +1,3 @@
-
 const story = {
     start: {
         text: "You are in a dark forest. You can go left or right.",
