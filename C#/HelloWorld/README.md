@@ -1,6 +1,6 @@
 
 Overview
-As a software engineer, my goal is to refine and develop my skills continuously. The "Hello World" project is a classic exercise that demonstrates the fundamentals of programming and system interaction in C#. It serves as a foundation for more complex projects, allowing me to explore the nuances of the C# language and .NET framework.
+The "Hello World" project is a classic exercise that demonstrates the fundamentals of programming and system interaction in C#. It serves as a foundation for more complex projects, allowing me to explore the nuances of the C# language and .NET framework.
 
 This simple console application outputs the phrase "Hello World" to the console. Creating this software served as an exercise to practice basic C# syntax and understand the workflow of a C# application, including compiling and executing the code.
 
