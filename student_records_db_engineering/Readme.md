@@ -1,18 +1,20 @@
-# 🧑‍🎓 Student Performance Tracking System – SQL + Streamlit
+# Student Performance Tracking System – SQL + Streamlit
 
 This project builds a relational database system for managing and visualizing **student academic performance**. The system tracks students, courses, attendance, grades, and assignments using **SQLite and SQL**, and presents insights through a **Streamlit-powered web dashboard**. It demonstrates skills in database engineering, data querying, and frontend analytics.
 
 
-## 📁 Project Structure
+##  Project Structure (as Table)
 
-student_performance_tracking/
-├── db_seed.py # Full schema creation and data seeding script
-├── analytics.py # Functions for querying and visualizing student performance
-├── Web_app.py # Streamlit dashboard UI
-├── university.db # Generated SQLite database
-└── README.md # Project overview
+| File/Folder           | Description                                      |
+|-----------------------|--------------------------------------------------|
+| `db_seed.py`          | Full schema creation and data seeding script     |
+| `analytics.py`        | Functions for querying and visualizing data      |
+| `Web_app.py`          | Streamlit dashboard UI                           |
+| `university.db`       | Generated SQLite database                        |
+| `README.md`           | Project overview and documentation               |
 
-## 🔧 Tools and Technologies
+
+## Tools and Technologies
 
 - **Database**: SQLite, SQL
 - **Backend**: Python (sqlite3, pandas)
@@ -21,7 +23,7 @@ student_performance_tracking/
 - **Schema Design**: Normalized relational model (13 tables)
 
 
-## 🧱 Database Schema
+## Database Schema
 - `student`: student demographics
 - `faculty`: instructor info
 - `course`: course details
@@ -34,7 +36,7 @@ student_performance_tracking/
 - `assignment_submissions`: student scores on assignments
 
 
-## 🧪 Data Seeding
+## Data Seeding
 
 The `db_seed.py` script creates all tables and inserts structured seed data:
 - 10 students
@@ -43,7 +45,7 @@ The `db_seed.py` script creates all tables and inserts structured seed data:
 - Grades, attendance logs, and submissions for 5+ students
 
 
-## 📊 Visual Reports (via Streamlit)
+## Visual Reports (via Streamlit)
 
 - 📈 Grade distribution by letter grade
 - 📊 Average scores per assignment
@@ -52,7 +54,7 @@ The `db_seed.py` script creates all tables and inserts structured seed data:
 - 📘 Full performance reports per student
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Install dependencies
 ```bash
