@@ -1,5 +1,7 @@
 # Student Performance Tracking System – SQL + Streamlit
 
+Video Walkthrough: https://youtu.be/Q-U7CMLzDco 
+
 This project builds a relational database system for managing and visualizing **student academic performance**. The system tracks students, courses, attendance, grades, and assignments using **SQLite and SQL**, and presents insights through a **Streamlit-powered web dashboard**. It demonstrates skills in database engineering, data querying, and frontend analytics.
 
 ## Getting Started
