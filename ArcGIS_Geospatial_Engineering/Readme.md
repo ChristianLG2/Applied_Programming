@@ -1,6 +1,6 @@
 # Global Air Quality ArcGIS Visualization
 
-Video Walktrhough: 
+Video Walktrhough: https://youtu.be/ZHVR2CR8iy8 
 
 This project provides an interactive web-based map that visualizes air quality measurements worldwide using data from the [OpenAQ API](https://openaq.org/). It supports pollutant filtering, intuitive color scaling, and dynamic marker sizing. The solution combines data engineering, geospatial rendering, and web development.
 
