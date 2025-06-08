@@ -29,9 +29,9 @@ By integrating normalized, preprocessed data with an interactive map, this tool 
 - Legend for interpreting pollution levels
 - Preprocessed and normalized dataset for performance optimization
 
-## Technologies
+## Tools
 
-- **Frontend**: HTML, CSS, JavaScript (ArcGIS API 4.29)
+- **Frontend**: HTML, CSS, JavaScript (ArcGIS API)
 - **Backend/Data Processing**: Python (for data collection and normalization)
 - **Data Source**: OpenAQ (open-source global air quality data)
 - **Deployment**: GitHub Pages (optional)
