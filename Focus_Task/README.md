@@ -50,8 +50,6 @@ Time management is a key factor in personal and professional productivity. This 
 
 ## 📁 Project Structure
 
-## 📁 Project Structure
-
 ```plaintext
 .
 ├── index.html          # Main webpage with task input and Pomodoro timer
