@@ -50,9 +50,14 @@ Time management is a key factor in personal and professional productivity. This 
 
 ## 📁 Project Structure
 
-├── index.html # Main HTML layout
-├── style.css # Styling for the app
-├── script.js # JS logic and interactivity
+## 📁 Project Structure
+
+```plaintext
+.
+├── index.html          # Main webpage with task input and Pomodoro timer
+├── style.css           # Styling for layout, priority colors, and responsiveness
+├── script.js           # JavaScript logic for task management and timer
 ├── assets/
-│ └── beep.mp3 # (Optional) local beep sound
-└── README.md # Project documentation
+│   └── beep.mp3        # (Optional) Pomodoro alert sound
+└── README.md           # Project documentation
+
