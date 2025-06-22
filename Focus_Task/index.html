@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus Task</title>
+
+  <!-- Toastify.js for notifications -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Moment.js for time formatting -->
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Focus Task</h1>
+
+    <!-- Task Input Form -->
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Enter your task" required />
+      <select id="taskPriority">
+        <option value="Gold">Urgent 🥇</option>
+        <option value="Silver">Necessary 🥈</option>
+        <option value="Bronze">Important 🥉</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+
+    <!-- Pomodoro Timer -->
+    <div class="pomodoro">
+      <h2>Pomodoro Timer</h2>
+      <button id="startPomodoro">Start 25-Minute Session</button>
+      <p id="timer">25:00</p>
+    </div>
+  </div>
+
+  <!-- Beep sound for Pomodoro -->
+  <audio id="pomodoro-sound" src="https://www.soundjay.com/buttons/beep-07.wav" preload="auto"></audio>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
