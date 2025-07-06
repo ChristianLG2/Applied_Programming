@@ -16,6 +16,20 @@ This project demonstrates client-side development principles, cloud integration 
 This version builds on a previously developed local-only task manager by adding persistent cloud database functionality and enabling access across multiple devices.
 Previous version can be found at: https://github.com/ChristianLG2/Applied_Programming/tree/main/Focus_Task 
 
+## Demonstration
+
+Below are screenshots demonstrating the functionality and interface of the application:
+
+| Task Entry and Filtering | Pomodoro Timer in Action |
+|--------------------------|--------------------------|
+| ![Task Input](assets/screenshots/task-input.png) | ![Pomodoro Timer](assets/screenshots/pomodoro-timer.png) |
+
+| Dark Mode Enabled | Cloud-Synced Tasks |
+|-------------------|--------------------|
+| ![Dark Mode](assets/screenshots/dark-mode.png) | ![Cloud Tasks](assets/screenshots/cloud-tasks.png) |
+
+> Note: All tasks shown are stored and synced with Firebase Cloud Firestore under each user's authenticated account.
+
 ## Why This App and These Features?
 
 This application was built to encourage focused productivity by combining task prioritization with the Pomodoro technique. Many existing tools offer either timer functionality or task lists but not both in a simple, distraction-free environment. 
