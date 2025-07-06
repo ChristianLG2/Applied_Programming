@@ -22,11 +22,11 @@ Below are screenshots demonstrating the functionality and interface of the appli
 
 | Task Entry and Filtering | Pomodoro Timer in Action |
 |--------------------------|--------------------------|
-| ![Task Input](assets/screenshots/task-input.png) | ![Pomodoro Timer](assets/screenshots/pomodoro-timer.png) |
+| ![Task Input](assets/Screenshots/task-input.png) | ![Pomodoro Timer](assets/Screenshots/pomodoro-timer.png) |
 
 | Dark Mode Enabled | Cloud-Synced Tasks |
 |-------------------|--------------------|
-| ![Dark Mode](assets/screenshots/dark-mode.png) | ![Cloud Tasks](assets/screenshots/cloud-tasks.png) |
+| ![Dark Mode](assets/Screenshots/dark-mode.png) | ![Cloud Tasks](assets/Screenshots/cloud-tasks.png) |
 
 > Note: All tasks shown are stored and synced with Firebase Cloud Firestore under each user's authenticated account.
 
